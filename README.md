@@ -14,10 +14,8 @@ This app is used in connection with Sinatra and ActiveRecord. You do not have to
 Download or fork the repository and bundle in terminal in order to use the required gems
 and dependencies.
 
-I have 2 extra files but you dont need those if you want to set up correctly from the beginning.
-If you are starting from stratch:
-
-You should first make an important folder:  config - with a ```database.yml``` file inside it.
+I have 2 extra files but you dont need those if you set up correctly from the beginning.
+If you are starting from scratch you should first make an important folder:  'config' -- with a ```database.yml``` file inside it.
 
 In your yml file will be :  
 
@@ -77,7 +75,7 @@ end
 Run ```rake db:migrate```  Very Important because you changed the files!
 
 And then run ```rake db:test:prepare``` again!!  Every time there is a change to the files, you should
-always run the test prepare to keep up with laster changes, otherwise some specs will fail and you wont know why.
+always run the test prepare to keep up with latest changes, otherwise some specs will fail and you wont know why.
 
 
 After that you make your lib folder and put ```player.rb``` and ```team.rb``` files
