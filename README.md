@@ -111,6 +111,9 @@ Free to copy and improve via fork and pull requests.
 
 Check the user stories if you would like to add more features and functionality.
 
+
+##User Stories
+
 1. As the league manager, I want to create teams.
 2. As the league manager, I want to add players to team so I can keep track of who plays for what team.
 3. As the league manager, I want to be able to move a player from one team to another. (Basically you need tp implement a separate update/delete function for the players, then you can delete players without deleting an entire team and all of their players)
