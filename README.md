@@ -43,7 +43,7 @@ This will create the main and test databases.
 
 
 2. Run ```rake db:create_migration NAME=create_players```
-A db folder with a sub folder called migrate with migration files will automatically be created.
+A db folder with a sub folder called ```migrate``` with migration files will automatically be created.
 In "CreatePlayers" class should be:
 
 ```ruby
@@ -73,6 +73,12 @@ class CreateTeams < ActiveRecord::Migration
   end
 end
 ```
+
+Run ```rake db:migrate```  Very Important because you changed the files!
+
+And then run ```rake db:test:prepare``` again!!  Every time there is a change to the files, you should
+always run the test prepare to keep up with laster changes, otherwise some specs will fail and you wont know why.
+
 
 After that you make your lib folder and put ```player.rb``` and ```team.rb``` files
 
@@ -109,7 +115,7 @@ Check the user stories if you would like to add more features and functionality.
 
 1. As the league manager, I want to create teams.
 2. As the league manager, I want to add players to team so I can keep track of who plays for what team.
-3. As the league manager, I want to be able to move a player from one team to another.
-4. As the league manager, I want to see a history of a player's teams, so I can keep track what teams they've played for.
+3. As the league manager, I want to be able to move a player from one team to another. (Basically you need tp implement a separate update/delete function for the players, then you can delete players without deleting an entire team and all of their players)
+4. As the league manager, I want to see a history of a player's teams, so I can keep track what teams they've played for.(I believe a jopin table needs to go in here somewhere so that some players can play for multiple teams)
 5. As the league manager, I want to set up games between teams, so I can keep track of scores and win-loss records.
 6. As the league manager, I want to generate tournament ladder that pits the teams with the best records against each other, so I can find out who the best team is. (Hint: Just pick an even number like 8 or 16 so every team in the tournament always has a match.)
