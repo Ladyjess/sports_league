@@ -14,7 +14,7 @@
 
 <ul>
   <% @team.players.each do |player| %>
-  <li><%= player.player_name %></li>
+  <li><a href="/players/<%= player.id %>/edit"><%= player.player_name %></a></li>  
   <% end %>
 </ul>
 <% else %>

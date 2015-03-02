@@ -41,19 +41,19 @@ delete '/teams/:id' do
   @team.delete
   @teams = Team.all
   erb :index
+end
 
 post '/players' do
   player_name = params["player_name"]
   team_id = params["team_id"].to_i
-  player = Player.new({:player_name => player_name, :team_id => team_id})
-  player.save
+  player = Player.new({:player_name => player_name, :team_id => team_id}).save
   @team = Team.find(team_id)
   erb :team
 end
 
 get '/players/:id' do
   @player = Player.find(params["id"].to_i)
-  erb :player
+  erb :player_edit
 end
 
 get '/players/:id/edit' do
@@ -65,12 +65,12 @@ patch '/players/:id' do
   player_name = params["player_name"]
   @player = Player.find(params["id"].to_i)
   @player.update({:player_name => player_name})
-  erb :player
+  redirect '/'
 end
 
 delete '/players/:id' do
   @player = Player.find(params["id"].to_i)
   @player.delete
   @players = Player.all
-  erb :team
+  redirect '/'
 end
