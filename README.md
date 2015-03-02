@@ -116,7 +116,7 @@ Check the user stories if you would like to add more features and functionality.
 
 1. As the league manager, I want to create teams.
 2. As the league manager, I want to add players to team so I can keep track of who plays for what team.
-3. As the league manager, I want to be able to move a player from one team to another. (Basically you need tp implement a separate update/delete function for the players, then you can delete players without deleting an entire team and all of their players)
-4. As the league manager, I want to see a history of a player's teams, so I can keep track what teams they've played for.(I believe a jopin table needs to go in here somewhere so that some players can play for multiple teams)
+3. As the league manager, I want to be able to move a player from one team to another. (Basically you need to implement a separate update/delete function for the players, then you can delete players without deleting an entire team and all of their players)
+4. As the league manager, I want to see a history of a player's teams, so I can keep track what teams they've played for.(I believe a join table needs to go in here somewhere so that some players can play for multiple teams)
 5. As the league manager, I want to set up games between teams, so I can keep track of scores and win-loss records.
 6. As the league manager, I want to generate tournament ladder that pits the teams with the best records against each other, so I can find out who the best team is. (Hint: Just pick an even number like 8 or 16 so every team in the tournament always has a match.)
