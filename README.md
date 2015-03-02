@@ -33,14 +33,14 @@ Make sure those are lined up correctly. If you put the adapter and database word
 to the left wall of the text editor, your database will only make the development database
 and ignore everything else under it.
 
-1. Run ```rake db:create```
+Run ```rake db:create```
 
 then:  ```rake db:test:prepare```
 
 This will create the main and test databases.
 
 
-2. Run ```rake db:create_migration NAME=create_players```
+Run ```rake db:create_migration NAME=create_players```
 A db folder with a sub folder called ```migrate``` with migration files will automatically be created.
 In "CreatePlayers" class should be:
 
