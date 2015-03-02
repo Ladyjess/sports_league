@@ -1,0 +1,27 @@
+<h2>Add a player to <%= @team.team_name %>'s roster</h2>
+
+<form action="/players" method="post">
+  <input id="team_id" name="team_id" type="hidden" value="<%= @team.id %>">
+
+  <label for="player_name">Player Name:</label>
+  <input id="player_name" name="player_name" type="text">
+
+  <button type="submit">Add Player</button>
+</form>
+
+<% if @team.players.any? %>
+<h4>Here are all the players on this team:</h4>
+
+<ul>
+  <% @team.players.each do |player| %>
+  <li><%= player.player_name %></li>
+  <% end %>
+</ul>
+<% else %>
+<p>This team has no players yet!</p>
+<% end %>
+
+<p><a href="/teams/<%= @team.id %>/edit">Edit or Delete <%= @team.team_name %>'s info</a></p>
+</br>
+
+<p><a href="/">Return to Main Page</a></p>

@@ -1,0 +1,23 @@
+<h1>Team and Player Tracker</h1>
+
+<form action="/teams" method="post">
+  <label for="team_name">Enter the team name:</label>
+  <input id="team_name" name="team_name" type="text">
+  <button type="submit">Add Team</button>
+
+</form>
+
+<% if @teams.any? %>
+<p>Click on a teams to see its players:</p>
+
+<ul>
+  <% @teams.each do |team| %>
+  <li><a href="/teams/<%= team.id %>"><%= team.team_name %></a></li>
+  <% end %>
+</ul>
+
+  <% else %>
+
+<p> There are no teams yet! </p>
+
+<% end %>
