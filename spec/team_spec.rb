@@ -17,4 +17,9 @@ describe Team do
     team = Team.new({:team_name => "a".*(51)})
     expect(team.save).to eq (false)
   end
+
+  it 'converts the name to uppercase each first letter in a word' do
+    team = Team.create({:team_name => "belgium football club"})
+    expect(team.team_name).to eq ("Belgium Football Club")
+  end
 end

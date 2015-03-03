@@ -46,7 +46,7 @@ end
 post '/players' do
   player_name = params["player_name"]
   team_id = params["team_id"].to_i
-  player = Player.new({:player_name => player_name, :team_id => team_id}).save
+  player = Player.new({:player_name => player_name, :team_id => team_id, :performed => false}).save
   @team = Team.find(team_id)
   erb :team
 end
@@ -74,3 +74,16 @@ delete '/players/:id' do
   @players = Player.all
   redirect '/'
 end
+
+
+
+
+# This code might be useful for another app to go to AR built in errors page.
+#Right now its saying undefined method for True class
+#
+# if @team.save
+#     erb :index
+#   else
+#     erb :errors
+#   end
+# end
