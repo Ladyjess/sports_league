@@ -8,6 +8,15 @@ describe 'Player' do
      expect(player.team).to eq (team)
    end
 
+   it 'validates the presence of player' do
+     player = Player.new({:player_name => ""})
+     expect(player.save).to eq (false)
+   end
+
+   it "ensures the length of player name is at most 40 characters" do
+     player = Player.new({:player_name => "a".*(41)})
+     expect(player.save).to eq (false)
+   end
 
   describe ".has_not_performed" do
     it 'returns the players who are still waiting to play their turn' do

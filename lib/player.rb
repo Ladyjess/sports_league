@@ -5,4 +5,6 @@ class Player < ActiveRecord::Base
   end
 
   belongs_to :team
+  validates :player_name, {:presence => true, :length => { :maximum => 40 }}
+
 end
